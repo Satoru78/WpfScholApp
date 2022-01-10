@@ -1,0 +1,36 @@
+﻿<Page x:Class="WpfScholApp.View.Pages.ReservationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfScholApp.View.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ReservationPage">
+
+  
+        <Grid>
+            <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+            <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            <TextBlock Text="Client:"/>
+            <ComboBox Width="300" ItemsSource="{Binding Clients}" SelectedItem="{Binding Client}" DisplayMemberPath="GetName"/>
+
+            <TextBlock Text="Service:"/>
+            <ComboBox Width="300" ItemsSource="{Binding Services}" SelectedItem="{Binding Service.Title}" DisplayMemberPath="Title"/>
+
+            <TextBlock Text="Дата:"/>
+            <DatePicker SelectedDate="{Binding ServiceClient.StartTime}"/>
+            <TextBlock Text="Комментарий"/>
+            <TextBox TextWrapping="Wrap" Height="50" Text="{Binding Comment}"/>
+
+
+            <Button Content="Save" Background="Blue" Margin="0,20,0,0" Name="SaveBtn2" Click="SaveBtn2_Click"></Button>
+            </StackPanel>
+        </Grid>
+    
+</Page>
